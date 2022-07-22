@@ -17,6 +17,8 @@ const Home = () => {
     useEffect(() => {
         if(marketplace) loadNFTs()
     }, [marketplace])
+
+
     const loadNFTs = async ()  =>{
         try {
             const data = await marketplace.methods.fetchMarketItems().call()
