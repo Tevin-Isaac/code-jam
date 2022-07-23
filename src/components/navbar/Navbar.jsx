@@ -9,15 +9,15 @@ import { truncateAddress } from "../../utils/helpers";
 const Menu = () => (
   <>
     <Link to="/">
-      <p>Explore</p>{" "}
+      <p style={{ fontSize: "14px" }}>Explore</p>{" "}
     </Link>
     <Link to="/profile">
       {" "}
-      <p>My NFTs</p>
+      <p style={{ fontSize: "14px" }}>NFTs</p>
     </Link>
     <Link to="/CoinPage">
       {" "}
-      <p>Crypto</p>
+      <p style={{ fontSize: "14px" }}>Crypto</p>
     </Link>
   </>
 );
@@ -31,15 +31,16 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-links">
         <div className="navbar-links_logo">
-          <img src={logo} alt="logo" />
-          <Link to="/"></Link>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="navbar-links_container">
           <input type="text" placeholder="Search NFT Here" autoFocus={true} />
           <Menu />
           {address && (
             <Link to="/">
-              <p onClick={destroy}>Logout</p>
+              <p  style={{ fontSize: "14px" }} onClick={destroy}>Logout</p>
             </Link>
           )}
         </div>
