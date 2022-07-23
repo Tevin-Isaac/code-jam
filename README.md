@@ -12,6 +12,7 @@ npx hardhat node
 npx hardhat run scripts/deploy.js
 
 ## Alfajores Testnet
+yarn asb
 npx hardhat console --network alfajores
 npx hardhat run --network alfajores scripts/sample-script.js
 npx hardhat test --network alfajores

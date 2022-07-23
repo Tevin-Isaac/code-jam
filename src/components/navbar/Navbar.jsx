@@ -13,7 +13,7 @@ const Menu = () => (
     </Link>
     <Link to="/profile">
       {" "}
-      <p>My NFTs</p>
+      <p>git pull NFTs</p>
     </Link>
     <Link to="/CoinPage">
       {" "}
