@@ -11,6 +11,7 @@
     height: 80px;
     border-bottom: 1px solid #d7d7d7;
     width: 900px;
+    
   }
   
   .coin {
@@ -61,6 +62,10 @@
   
   .red {
     color: #f00606;
+  }
+
+  .white {
+    color: #ffffff;
   }
   
   .green {
