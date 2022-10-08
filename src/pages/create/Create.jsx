@@ -9,7 +9,21 @@ import CircleLoader from "react-spinners/ClipLoader";
 import {useContractKit} from "@celo-tools/use-contractkit";
 import { useNavigate } from "react-router-dom";
 
-const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
+const projectId = process.env.NEXT_PUBLIC_IPFS_PROJECT_ID;
+const projectSecret = process.env.NEXT_PUBLIC_IPFS_PROJECT_SECRET;
+const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
+  'base64',
+)}`;
+const options = {
+  host: 'ipfs.infura.io',
+  protocol: 'https',
+  port: 5001,
+  headers: { authorization: auth },
+};
+const client = ipfsHttpClient(options);
+const dedicatedEndPoint = process.env.NEXT_PUBLIC_IPFS_DEDICATED_ENDPOINT;
+
+// const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 const Create = () => {
     const {address, connect, performActions} = useContractKit()
     const navigate = useNavigate();
@@ -43,7 +57,7 @@ const Create = () => {
             try {
                 const result = await client.add(file)
                 console.log(result)
-                setImage(`https://ipfs.infura.io/ipfs/${result.path}`)
+                setImage(`${dedicatedEndPoint}/ipfs/${result.path}`)
             } catch (error) {
                 console.log("ipfs image upload error: ", error)
             }
