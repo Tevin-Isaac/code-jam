@@ -16,6 +16,13 @@
     margin-top: 64px;
     color: #fff;
   }
+  .table{
+    /* border-spacing: 20px; */
+    width:  900px;
+    display: flex;
+    justify-content: space-evenly;
+
+  }
   
   .coin-search {
     margin-bottom: 64px;
