@@ -9,8 +9,8 @@ import CircleLoader from "react-spinners/ClipLoader";
 import {useContractKit} from "@celo-tools/use-contractkit";
 import { useNavigate } from "react-router-dom";
 
-const projectId = process.env.NEXT_PUBLIC_IPFS_PROJECT_ID;
-const projectSecret = process.env.NEXT_PUBLIC_IPFS_PROJECT_SECRET;
+const projectId = '2Fio98TDu6mSLDySfePLaED7E5X';
+const projectSecret = '773228123ba829f01aeee0258c09a24d';
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
   'base64',
 )}`;
@@ -21,7 +21,7 @@ const options = {
   headers: { authorization: auth },
 };
 const client = ipfsHttpClient(options);
-const dedicatedEndPoint = process.env.NEXT_PUBLIC_IPFS_DEDICATED_ENDPOINT;
+const dedicatedEndPoint = 'https://chizaanftscelo.infura-ipfs.io';
 
 // const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 const Create = () => {
